@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GebruikersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/gebruikers', function () {
-    $data = DB::table('gebruikers')
-            ->select('naam', 'woonplaats')  
-            ->where('woonplaats', 'like',  'b%')  
-            ->orderBy('woonplaats', 'asc')
-            ->orderBy('naam', 'asc')
-            ->get();
-    // dd($data);
-    return view('gebruikers.index',['data'=>$data]); 
-});
+Route::get('/gebruikers', [GebruikersController::class, 'index']);
