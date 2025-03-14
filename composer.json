@@ -9,7 +9,8 @@
         "fideloper/proxy": "^4.4",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.40.0",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "symfony/mailer": "^6.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
