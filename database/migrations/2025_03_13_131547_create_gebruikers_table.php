@@ -14,7 +14,7 @@ class CreateGebruikersTable extends Migration
     public function up()
     {
         Schema::create('gebruikers', function (Blueprint $table) {
-            $table->id()->Pkey()->autoIncrement();
+            $table->integer('nummer')->nullable(false);
             $table->string('naam')->max(25)->notnull();
             $table->string('woonplaats')->max(25)->notnull();
             $table->timestamps();

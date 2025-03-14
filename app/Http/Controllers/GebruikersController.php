@@ -18,8 +18,15 @@ class GebruikersController extends Controller
         return view('gebruikers.index',['data'=>$data]);
     }
     public function create(){
+        return view('gebruikers.create');
     }
     public function store(Request $request){
+        DB::table('gebruikers')->insert([
+            'nummer' => $request->nummer,
+            'naam' => $request->naam,
+            'woonplaats' => $request->woonplaats
+        ]);
+        return redirect('/gebruikers');
     }
     public function show($id){
     }

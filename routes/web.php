@@ -20,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/gebruikers', [GebruikersController::class, 'index']);
+Route::get('/gebruikers/create', [GebruikersController::class, 'create']);
+Route::post('/gebruikers', [GebruikersController::class, 'store'])->name('store');
