@@ -9,10 +9,10 @@ class GebruikersController extends Controller
 {
     public function index(){
         $data = DB::table('gebruikers')
-                ->select('naam', 'woonplaats')  
-                ->where('woonplaats', 'like',  'b%')  
+                ->select('nummer', 'naam', 'woonplaats')  
+                ->where('woonplaats', 'like',  'b%') 
                 ->orderBy('woonplaats', 'asc')
-                ->orderBy('naam', 'asc')
+                ->orderBy('nummer', 'asc')
                 ->get();
         // dd($data);
         return view('gebruikers.index',['data'=>$data]);
